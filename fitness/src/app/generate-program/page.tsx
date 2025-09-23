@@ -175,22 +175,26 @@ const GenerateProgramPage = () => {
                 {/* Voice wave animation when speaking */}
                 <div className="absolute left-0 right-0 top-1/2 -translate-y-1/2 flex justify-center items-center h-20">
                   {[...Array(5)].map((_, i) => (
-                    <div
-                      key={i}
-                      className={`mx-1 w-1 bg-primary rounded-full transition-all duration-200 ${
-                        isSpeaking ? "animate-sound-wave" : ""
-                      }`}
-                      style={{
-                        height: isSpeaking
-                          ? `${20 + Math.random() * 50}%` // 20% to 70% of parent height
-                          : "5%",
-                        animationDelay: `${i * 0.1}s`,
-                      }}
-                    />
+                    <div className="absolute left-0 right-0 top-1/2 -translate-y-1/2 flex justify-center items-center h-20">
+                      {[...Array(5)].map((_, i) => (
+                        <div
+                          key={i}
+                          className={`mx-1 w-1 bg-primary rounded-full transition-all duration-200 ${
+                            isSpeaking ? "animate-sound-wave" : ""
+                          }`}
+                          style={{
+                            height: isSpeaking
+                              ? `${20 + Math.random() * 50}%` // 20% to 70% of parent height
+                              : "5%",
+                            animationDelay: `${i * 0.1}s`,
+                          }}
+                        />
+                      ))}
+                    </div>
                   ))}
                 </div>
-              </div>
-
+              </div>{" "}
+              {/* ✅ properly closes AI VOICE ANIMATION */}
               {/* AI IMAGE */}
               <div className="relative size-32 mb-4">
                 <div
@@ -198,7 +202,6 @@ const GenerateProgramPage = () => {
                     isSpeaking ? "animate-pulse" : ""
                   }`}
                 />
-
                 <div className="relative w-full h-full rounded-full bg-card flex items-center justify-center border border-border overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-b from-primary/10 to-secondary/10"></div>
                   <img
@@ -208,14 +211,11 @@ const GenerateProgramPage = () => {
                   />
                 </div>
               </div>
-
-              <h2 className="text-xl font-bold text-foreground">CodeFlex AI</h2>
+              <h2 className="text-xl font-bold text-foreground">CoreVibe AI</h2>
               <p className="text-sm text-muted-foreground mt-1">
                 Fitness & Diet Coach
               </p>
-
               {/* SPEAKING INDICATOR */}
-
               <div
                 className={`mt-4 flex items-center gap-2 px-3 py-1 rounded-full bg-card border border-border ${
                   isSpeaking ? "border-primary" : ""
@@ -226,7 +226,6 @@ const GenerateProgramPage = () => {
                     isSpeaking ? "bg-primary animate-pulse" : "bg-muted"
                   }`}
                 />
-
                 <span className="text-xs text-muted-foreground">
                   {isSpeaking
                     ? "Speaking..."
